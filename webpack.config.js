@@ -12,11 +12,22 @@ module.exports = {
     filename: "[name].js",
 
   },
+
+  // 提取公共js
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          name: "commons",
+          chunks: "initial",
+          minChunks: 2
+        }
+      }
+    }
+  },
+  
   plugins: [
 
-    // 提取公共js
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "common",
-    })
+    
   ]
 };
