@@ -1,5 +1,6 @@
 var path = require('path');
 const webpack = require('webpack');
+const WebpackMd5Hash = require('webpack-md5-hash');
 
 
 module.exports = {
@@ -12,6 +13,9 @@ module.exports = {
     filename: "[name].[chunkhash:8].js",   
 
   },
+  plugins: [
+    new WebpackMd5Hash()
+  ],
 
   // 提取公共js
   optimization: {
@@ -23,11 +27,9 @@ module.exports = {
           minChunks: 2
         }
       }
+    },
+    runtimeChunk: {
+      name: 'manifest'
     }
-  },
-
-  plugins: [
-
-    
-  ]
+  }
 };
