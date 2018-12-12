@@ -1,2 +1,2 @@
 import jquery from 'jquery';
-console.log('two');
+console.log('two2');
