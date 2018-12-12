@@ -14,7 +14,7 @@ const webpackConfigDev = {
 		contentBase: path.join(__dirname, "../src"),
 		publicPath:'/',
 		host: "127.0.0.1",
-		port: "8089",
+		port: "8080",
 		overlay: true, // 浏览器页面上显示错误
 		// open: true, // 开启浏览器
 		// stats: "errors-only", //stats: "errors-only"表示只打印错误：
@@ -24,7 +24,7 @@ const webpackConfigDev = {
 		//热更新
 		new webpack.HotModuleReplacementPlugin(),
 	],
-	// devtool: "source-map",  // 开启调试模式
+	devtool: "source-map",  // 开启调试模式
 	module: {
 		rules: []
 	},

@@ -5,18 +5,19 @@ const glob = require("glob");
 
 //消除冗余的css
 const purifyCssWebpack = require("purifycss-webpack");
+
 // html模板
 const htmlWebpackPlugin = require("html-webpack-plugin");
+
 //静态资源输出
 const copyWebpackPlugin = require("copy-webpack-plugin");
 const rules = require("./webpack.rules.conf.js");
+
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function (name, chunks) {
 	return {
 		template: `./src/pages/${name}/index.html`,
 		filename: `${name}.html`,
-		// favicon: './favicon.ico',
-		// title: title,
 		inject: true,
 		hash: true, //开启hash  ?[hash]
 		chunks: chunks,
